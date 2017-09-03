@@ -6,47 +6,51 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
 Group.destroy_all
 Event.destroy_all
+User.destroy_all
 
-User.create([
-  { username: "sshardlow",
-    firstname: "Suze",
-    lastname: "Shardlow",
-    email: "suze@suze.com",
-    jobtitle: "Junior Full-Stack Web Developer",
-    linkedinurl: "https://www.linkedin.com/in/SuzeShardlow",
-    bio: "Hi, I'm Suze.  I am starting out in web development and would like to meet others who are working in this field.",
-    password: "p",
-    password_confirmation: "p" },
 
-  { username: "jyoung",
-    firstname: "Jennifer",
-    lastname: "Young",
-    email: "jen@jen.com",
-    jobtitle: "JavaScript Developer",
-    bio: "Hi, I'm Jennifer.  I am looking for my second JavaScript role and am keen to meet up and learn from others.",
-    password: "p",
-    password_confirmation: "p" },
+g1 = Group.create!(name: "Founders and Coders", url: "founderscoders")
+g2 = Group.create!(name: "London JavaScript Community", url: "london-javascript-community")
+g3 = Group.create!(name: "Ladies of Code (London)", url: "ladies-of-code-uk")
+g4 = Group.create!(name: "London App Brewery", url: "londonappbrewery")
+g5 = Group.create!(name: "Women Who Code London", url: "women-who-code-london")
 
-  ])
 
-Group.create([
-  { name: "Founders and Coders", url: "founderscoders" },
-  { name: "London JavaScript Community", url: "london-javascript-community" },
-  { name: "Ladies of Code (London)", url: "ladies-of-code-uk" },
-  { name: "London App Brewery", url: "londonappbrewery" },
-  { name: "Women Who Code London", url: "women-who-code-london" }
-  ])
-
-Event.create([
+e1 = Event.create!(
   { eventid: "242091687",
     name: "How to Build a Chatbot to Automate Customer Service",
     status: "upcoming",
     time: 1504632600000,
     duration: 7200000,
     link: "https://www.meetup.com/LondonAppBrewery/events/242091687",
-    description: "Do you want to save time responding to the same routine requests over Facebook Messenger, Twitter and E-Mail?  Do you want to help people accomplish a task without the hassle and complex navigation?  Do people expect you to be available 24/7?  Do you wish you could answer customer queries sooner?  Then this is the event is for you! We’ll show you how easy (or difficult) is it actually to build a chatbot and how you can leverage messaging platforms to engage your audience."
-  }
-  ])
+    description: "Do you want to save time responding to the same routine requests over Facebook Messenger, Twitter and E-Mail?  Do you want to help people accomplish a task without the hassle and complex navigation?  Do people expect you to be available 24/7?  Do you wish you could answer customer queries sooner?  Then this is the event is for you! We’ll show you how easy (or difficult) is it actually to build a chatbot and how you can leverage messaging platforms to engage your audience.",
+    group_id: g4.id
+    }
+  )
+
+  User.create([
+    { username: "sshardlow",
+      firstname: "Suze",
+      lastname: "Shardlow",
+      email: "suze@suze.com",
+      jobtitle: "Junior Full-Stack Web Developer",
+      linkedinurl: "https://www.linkedin.com/in/SuzeShardlow",
+      bio: "Hi, I'm Suze.  I am starting out in web development and would like to meet others who are working in this field.",
+      password: "p",
+      password_confirmation: "p",
+      event_ids: []
+    },
+
+    { username: "jyoung",
+      firstname: "Jennifer",
+      lastname: "Young",
+      email: "jen@jen.com",
+      jobtitle: "JavaScript Developer",
+      bio: "Hi, I'm Jennifer.  I am looking for my second JavaScript role and am keen to meet up and learn from others.",
+      password: "p",
+      password_confirmation: "p",
+      event_ids: [e1.id]
+    },
+    ])
