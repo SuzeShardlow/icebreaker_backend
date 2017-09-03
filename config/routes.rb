@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :events
   scope :api do
     # resources :posts
     resources :users

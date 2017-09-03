@@ -8,6 +8,7 @@
 
 User.destroy_all
 Group.destroy_all
+Event.destroy_all
 
 User.create([
   { username: "sshardlow",
@@ -37,4 +38,15 @@ Group.create([
   { name: "Ladies of Code (London)", url: "ladies-of-code-uk" },
   { name: "London App Brewery", url: "londonappbrewery" },
   { name: "Women Who Code London", url: "women-who-code-london" }
+  ])
+
+Event.create([
+  { eventid: "242091687",
+    name: "How to Build a Chatbot to Automate Customer Service",
+    status: "upcoming",
+    time: 1504632600000,
+    duration: 7200000,
+    link: "https://www.meetup.com/LondonAppBrewery/events/242091687",
+    description: "Do you want to save time responding to the same routine requests over Facebook Messenger, Twitter and E-Mail?  Do you want to help people accomplish a task without the hassle and complex navigation?  Do people expect you to be available 24/7?  Do you wish you could answer customer queries sooner?  Then this is the event is for you! We’ll show you how easy (or difficult) is it actually to build a chatbot and how you can leverage messaging platforms to engage your audience."
+  }
   ])
