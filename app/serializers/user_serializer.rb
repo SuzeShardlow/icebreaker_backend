@@ -5,7 +5,6 @@ class UserSerializer < ActiveModel::Serializer
     "#{object.firstname} #{object.lastname}"
   end
 
-  has_many :comments, through: :events
-  has_many :events
-
+  has_many :gatherings
+  has_many :comments
 end

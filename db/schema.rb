@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903224010) do
+ActiveRecord::Schema.define(version: 20170904101748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,39 +21,35 @@ ActiveRecord::Schema.define(version: 20170903224010) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "event_id"
-    t.index ["event_id"], name: "index_comments_on_event_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "gatherings", force: :cascade do |t|
+    t.integer "duration"
     t.string "eventid"
     t.text "name"
     t.string "status"
-    t.integer "duration"
+    t.string "time"
+    t.text "groupname"
     t.text "link"
-    t.text "description"
+    t.string "meetupvenuename"
+    t.integer "meetupvenuelat"
+    t.integer "meetupvenuelong"
+    t.string "meetupvenueaddress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "time"
-    t.bigint "comment_id"
-    t.bigint "group_id"
-    t.index ["comment_id"], name: "index_events_on_comment_id"
-    t.index ["group_id"], name: "index_events_on_group_id"
   end
 
-  create_table "events_users", id: false, force: :cascade do |t|
-    t.bigint "event_id", null: false
+  create_table "gatherings_users", id: false, force: :cascade do |t|
+    t.bigint "gathering_id", null: false
     t.bigint "user_id", null: false
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string "name"
+  create_table "meetupgroups", force: :cascade do |t|
+    t.text "name"
+    t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "url"
-    t.bigint "event_id"
-    t.index ["event_id"], name: "index_groups_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,9 +65,5 @@ ActiveRecord::Schema.define(version: 20170903224010) do
     t.text "bio"
   end
 
-  add_foreign_key "comments", "events"
   add_foreign_key "comments", "users"
-  add_foreign_key "events", "comments"
-  add_foreign_key "events", "groups"
-  add_foreign_key "groups", "events"
 end
