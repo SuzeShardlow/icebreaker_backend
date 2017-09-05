@@ -15,6 +15,11 @@ class GatheringsController < ApplicationController
 
   # POST /gatherings
   def create
+    # find gathering by MeetupAPIid
+    # if a gathering is found... add the current users id to the array of ids for that gathering
+    # if a gathering is NOT found.. created it and add the current users id to the array of ids for that gathering.
+
+
     @gathering = Gathering.new(gathering_params)
 
     if @gathering.save

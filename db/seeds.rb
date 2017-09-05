@@ -9,11 +9,20 @@
 User.destroy_all
 Meetupgroup.destroy_all
 
-mg1 = Meetupgroup.create!(name: "Founders and Coders", url: "founderscoders")
-mg2 = Meetupgroup.create!(name: "London JavaScript Community", url: "london-javascript-community")
-mg3 = Meetupgroup.create!(name: "Ladies of Code (London)", url: "ladies-of-code-uk")
-mg4 = Meetupgroup.create!(name: "London App Brewery", url: "londonappbrewery")
-mg5 = Meetupgroup.create!(name: "Women Who Code London", url: "women-who-code-london")
+Meetupgroup.create([
+  { name: "Founders and Coders", url: "founderscoders" },
+  { name: "London JavaScript Community", url: "london-javascript-community" },
+  { name: "Ladies of Code (London)", url: "ladies-of-code-uk" },
+  { name: "London App Brewery", url: "londonappbrewery" },
+  { name: "Women Who Code London", url: "women-who-code-london" },
+])
+
+
+# mg1 = Meetupgroup.create!(name: "Founders and Coders", url: "founderscoders")
+# mg2 = Meetupgroup.create!(name: "London JavaScript Community", url: "london-javascript-community")
+# mg3 = Meetupgroup.create!(name: "Ladies of Code (London)", url: "ladies-of-code-uk")
+# mg4 = Meetupgroup.create!(name: "London App Brewery", url: "londonappbrewery")
+# mg5 = Meetupgroup.create!(name: "Women Who Code London", url: "women-who-code-london")
 #
 #
 # e1 = Event.create!(

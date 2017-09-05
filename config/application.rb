@@ -38,9 +38,6 @@ module WDIProject4Api
     # end
 
     config.api_only = true
-
     config.eager_load_paths << Rails.root.join('lib')
-
-
   end
 end
