@@ -15,17 +15,25 @@ class GatheringsController < ApplicationController
 
   # POST /gatherings
   def create
-    # find gathering by MeetupAPIid
-    # if a gathering is found... add the current users id to the array of ids for that gathering
-    # if a gathering is NOT found.. created it and add the current users id to the array of ids for that gathering.
+    @gathering = Gathering.find_or_initialize_by(gathering_params)
 
-
-    @gathering = Gathering.new(gathering_params)
-
-    if @gathering.save
-      render json: @gathering, status: :created, location: @gathering
+    if @gathering.new_record?
+      if @gathering.save
+        @gathering.users << current_user
+        render json: @gathering, status: :created, location: @gathering
+      else
+        render json: @gathering.errors, status: :unprocessable_entity
+      end
     else
-      render json: @gathering.errors, status: :unprocessable_entity
+      if !@gathering.user_ids.include? current_user.id
+        @gathering.users << current_user
+      end
+
+      if @gathering.save
+        render json: @gathering, status: :created, location: @gathering
+      else
+        render json: @gathering.errors, status: :unprocessable_entity
+      end
     end
   end
 
@@ -44,13 +52,17 @@ class GatheringsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gathering
-      @gathering = Gathering.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gathering
+    @gathering = Gathering.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def gathering_params
-      params.require(:gathering).permit(:duration, :eventid, :name, :status, :time, :groupname, :link, :meetupvenuename, :meetupvenuelat, :meetupvenuelong, :meetupvenueaddress, user_ids: [] )
-    end
+  def find_gathering
+    @found_gathering = Gathering.find(params[:eventid])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def gathering_params
+    params.require(:gathering).permit(:duration, :eventid, :name, :status, :time, :groupname, :link, :meetupvenuename, :meetupvenuelat, :meetupvenuelong, :meetupvenueaddress, user_ids: [])
+  end
 end
