@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904101748) do
+ActiveRecord::Schema.define(version: 20170906161032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
-    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "gathering_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 20170904101748) do
     t.text "groupname"
     t.text "link"
     t.string "meetupvenuename"
-    t.integer "meetupvenuelat"
-    t.integer "meetupvenuelong"
     t.string "meetupvenueaddress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "meetupvenuelat"
+    t.float "meetupvenuelong"
   end
 
   create_table "gatherings_users", id: false, force: :cascade do |t|
