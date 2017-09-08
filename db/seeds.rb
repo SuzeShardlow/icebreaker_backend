@@ -47,6 +47,7 @@ User.create([
     jobtitle: "Junior Full-Stack Web Developer",
     linkedinurl: "https://www.linkedin.com/in/SuzeShardlow",
     bio: "Hi, I'm Suze.  I am starting out in web development and would like to meet others who are working in this field.",
+    image: "https://avatars0.githubusercontent.com/u/6759411?v=4&u=588e9b6314e16c562b9440e3b96bd3f97237a64e&s=400",
     password: "p",
     password_confirmation: "p"
   },
@@ -56,6 +57,7 @@ User.create([
     email: "jen@jen.com",
     jobtitle: "JavaScript Developer",
     bio: "Hi, I'm Jennifer.  I am looking for my second JavaScript role and am keen to meet up and learn from others.",
+    image: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/1918071_214603061134_7734833_n.jpg?oh=0e362da6c67dbf8e2512a34384267856&oe=5A5EE5EA",
     password: "p",
     password_confirmation: "p"
   }

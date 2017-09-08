@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :firstname, :lastname, :fullname, :email, :jobtitle, :linkedinurl, :bio, :password_digest
+  attributes :id, :username, :firstname, :lastname, :fullname, :email, :jobtitle, :linkedinurl, :bio, :image, :password_digest
 
   def fullname
     "#{object.firstname} #{object.lastname}"
