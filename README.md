@@ -1,6 +1,8 @@
 # Icebreaker
 
-[Try it here!](https://suzeshardlow.com/icebreaker/)
+This is the repository for the Icebreaker back end code.  [See the front end code.](https://github.com/SuzeShardlow/icebreaker)
+
+[Try the app!](https://suzeshardlow.com/icebreaker/)
 
 
 ## Introduction
