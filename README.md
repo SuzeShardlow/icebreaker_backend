@@ -27,7 +27,7 @@ We were also given the following optional bonus task:
 
 * **Include data from an external API.**
 
-As mentioned in my [Project Two](https://github.com/SuzeShardlow/skedaddle) readme, I love a challenge and I love bonus tasks.  I love real-time information and I love APIs even more.  So I was really keen to pull live data from the Meetup.com API into my app.
+As mentioned in my [Project Two](https://github.com/SuzeShardlow/skedaddle) readme, I love a challenge and I love bonus tasks.  I love real-time information and I love APIs even more.  So I was really keen to pull live data from the [Meetup.com API](https://www.meetup.com/meetup_api) into my app.
 
 I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early in the week, freeing up valuable time to focus on pulling in and manipulating the API data.
 
