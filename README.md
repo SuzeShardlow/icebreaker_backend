@@ -1,33 +1,28 @@
 # Icebreaker
 
-This is the repository for the Icebreaker back end code.  [See the front end code.](https://github.com/SuzeShardlow/icebreaker)
+This is the repository for the Icebreaker front end code.  [See the back end code.](https://github.com/SuzeShardlow/icebreaker_backend)
 
-[Try the app!](https://suze.dev/coding_projects/icebreaker/)
+[See my other coding projects!](https://suze.dev/coding_projects)
 
 
 ## Introduction
 
-I recently attended a 12-week web development bootcamp.
+**After learning JavaScript and Ruby for a couple of months, I created an AngularJS on Rails app in just seven days.**
 
-**For our final project, we were tasked to create an AngularJS on Rails app in just seven days.**
-
-During the course, my classmates and I were all busy polishing our CVs and knew that networking can be a very useful tool.  Many of my colleagues were dreading going to events on their own and talking to strangers so I hit upon the idea of creating an app which allows users to browse events and create a pre-meet with other attendees.
+Networking can be a very useful tool.  Many people dread going to events on their own and talking to strangers so I hit upon the idea of creating an app which allows users to browse events and create a pre-meet with other attendees.
 
 
-## Brief
+## Tasks/Competencies/Skills
 
-The requirements for our app were to:
+In this app I demonstrate my ability to:
 
-* Have an internal **Rails API**.
+* Build and use an internal **Rails API**.
 * Use **AngularJS** on the front end.
 * Incorporate at least three **RESTful resources**, one of which represents a user.
 * Have at least one **1:1** relationship and one **1:many** relationship.
-
-We were also given the following optional bonus task:
-
 * **Include data from an external API.**
 
-As mentioned in my [Project Two](https://github.com/SuzeShardlow/skedaddle) readme, I love a challenge and I love bonus tasks.  I love real-time information and I love APIs even more.  So I was really keen to pull live data from the [Meetup.com API](https://www.meetup.com/meetup_api) into my app.
+I love a challenge.  I love real-time information and I love APIs even more.  So I was really keen to pull live data from the Meetup.com API into my app.
 
 I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early in the week, freeing up valuable time to focus on pulling in and manipulating the API data.
 
