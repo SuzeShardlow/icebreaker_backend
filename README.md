@@ -1,6 +1,6 @@
 # Icebreaker
 
-This is the repository for the Icebreaker back end code.  [See the back end code.](https://github.com/SuzeShardlow/icebreaker_backend)
+This is the repository for the Icebreaker back end code.  [See the front end code.](https://github.com/SuzeShardlow/icebreaker)
 
 [See my other coding projects!](https://suze.dev/coding_projects)
 
